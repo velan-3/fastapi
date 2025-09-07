@@ -35,9 +35,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-@app.get("/")
-def read_root():
-    return {"message": "Hello from FastAPI on PythonAnywhere!"}
+# @app.get("/")
+# def read_root():
+#     return {"message": "Hello from FastAPI on PythonAnywhere!"}
 # ================================
 # 3. Pydantic Schema
 # ================================
@@ -95,3 +95,4 @@ async def get_forecast(drug_name: str, steps: int = 5):
     if "error" in data:
         raise HTTPException(status_code=404, detail=data["error"])
     return data
+
